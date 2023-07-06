@@ -36,7 +36,6 @@ const RemoveFlight = () => {
         method:"DELETE",
         headers:{
             "Content-Type":"application/json",
-            'Access-Control-Allow-Origin': '*'
         }
     })
     let data = await response.json()

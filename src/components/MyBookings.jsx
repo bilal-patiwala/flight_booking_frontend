@@ -17,7 +17,6 @@ const MyBookings = () => {
             headers:{
                 'Content-Type':'application/json',
                 Authorization: `Bearer ${authToken.refresh}`,
-                'Access-Control-Allow-Origin': '*'
             }
         })
         let data = await response.json()

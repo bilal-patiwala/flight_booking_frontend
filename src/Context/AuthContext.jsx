@@ -35,8 +35,7 @@ export const AuthProvider = ({children}) => {
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'X-CSRFToken':csrftoken,
-                'Access-Control-Allow-Origin': '*'
+                'X-CSRFToken':csrftoken
             },
             body: JSON.stringify({'username':event.target.username.value, 'password':event.target.password.value})
         })
@@ -53,13 +52,11 @@ export const AuthProvider = ({children}) => {
     let flight_admin_login = async (event) => {
         event.preventDefault()
         console.log(event.target.username.value);
-        // let response = await fetch("http://127.0.0.1:8000/flight-admin-login/",{
-        let response = await fetch("https://flight-booking-system-dun.vercel.app/flight-admin-login/",{
+        let response = await fetch("http://127.0.0.1:8000/flight-admin-login/",{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'X-CSRFToken':csrftoken,
-                'Access-Control-Allow-Origin': '*'
+                'X-CSRFToken':csrftoken
             },
             body: JSON.stringify({'username':event.target.username.value, 'password':event.target.password.value})
         })
@@ -76,14 +73,11 @@ export const AuthProvider = ({children}) => {
 
     const signupUser = async (event) => {
         event.preventDefault()
-        // let register_response = await fetch('http://127.0.0.1:8000/flight-user-register/', {
-        let register_response = await fetch('https://flight-booking-system-bilal-patiwala.vercel.app/flight-user-register/', {
+        let register_response = await fetch('http://127.0.0.1:8000/flight-user-register/', {
             method:"POST",
-            mode: 'no-cors',
             headers: {
                 'X-CSRFToken':csrftoken,
                 'Content-Type':"application/json",
-                'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({username:event.target.username.value, email:event.target.email.value, password:event.target.password.value})
         })
@@ -95,8 +89,7 @@ export const AuthProvider = ({children}) => {
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'X-CSRFToken':csrftoken,
-                'Access-Control-Allow-Origin': '*'
+                'X-CSRFToken':csrftoken
             },
             body: JSON.stringify({username:event.target.username.value, password:event.target.password.value})
         })
@@ -123,8 +116,7 @@ export const AuthProvider = ({children}) => {
         let response = await fetch('http://127.0.0.1:8000/token/refresh/', {
             method:'POST',
             headers:{
-                'Content-Type':'application/json',
-                'Access-Control-Allow-Origin': '*'
+                'Content-Type':'application/json'
             },
             body:JSON.stringify({'refresh':authToken?.refresh})
         })
