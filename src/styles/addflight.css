@@ -1,0 +1,42 @@
+.add-flight-form {
+    width: 50%;
+    margin:auto;
+    margin-top: 50px;
+    padding: 20px;
+    border:1px solid black
+  }
+  
+  .input-field{
+    background-color: #DDE6ED;
+    border-radius: 3px;
+    border-bottom: 1px solid gray;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type='text'],
+  input[type='number'],
+  input[type='time'],
+  input[type='date'] {
+    padding: 5px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: white;
+    color:#FC4F00 ;
+    border: none;
+    cursor: pointer;
+  }
+  
+  

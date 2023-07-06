@@ -1,0 +1,21 @@
+.booking-details-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .booking-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .booking-info {
+    margin-bottom: 10px;
+  }
+  
+  .booking-label {
+    font-weight: bold;
+  }
+  
+  

@@ -1,0 +1,92 @@
+.navbar {
+    padding: 10px;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74);
+-moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74);
+box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.74);
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: black;
+    align-items: center;
+    gap:20px;
+  }
+  
+  .navbar-links li {
+    margin-right: 10px;
+  }
+  
+  .navbar-links li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  
+  .navbar-links li a:hover {
+    text-decoration: underline;
+  }
+  
+
+  .search-container{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .inputfields{
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #DDE6ED;
+  }
+
+  .flight-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .flight-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .flight-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .book-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .book-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+  }
+  

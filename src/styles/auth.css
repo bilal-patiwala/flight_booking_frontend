@@ -1,0 +1,33 @@
+.container{
+    background-size: cover;
+    background-image: url("../assets/flight.jpg");
+    width: 100%;
+    min-height: 100vh;
+}
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  gap: 10px;
+}
+
+.inner-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 5px;
+    gap: 10px;
+}
+
+.user-input{
+    width: 50%;
+    margin: auto;
+}
