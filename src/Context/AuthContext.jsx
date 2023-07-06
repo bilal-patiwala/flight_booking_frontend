@@ -35,7 +35,8 @@ export const AuthProvider = ({children}) => {
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'X-CSRFToken':csrftoken
+                'X-CSRFToken':csrftoken,
+                'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({'username':event.target.username.value, 'password':event.target.password.value})
         })
@@ -57,7 +58,8 @@ export const AuthProvider = ({children}) => {
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'X-CSRFToken':csrftoken
+                'X-CSRFToken':csrftoken,
+                'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({'username':event.target.username.value, 'password':event.target.password.value})
         })
@@ -80,6 +82,7 @@ export const AuthProvider = ({children}) => {
             headers: {
                 'X-CSRFToken':csrftoken,
                 'Content-Type':"application/json",
+                'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({username:event.target.username.value, email:event.target.email.value, password:event.target.password.value})
         })
@@ -91,7 +94,8 @@ export const AuthProvider = ({children}) => {
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'X-CSRFToken':csrftoken
+                'X-CSRFToken':csrftoken,
+                'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({username:event.target.username.value, password:event.target.password.value})
         })
@@ -118,7 +122,8 @@ export const AuthProvider = ({children}) => {
         let response = await fetch('http://127.0.0.1:8000/token/refresh/', {
             method:'POST',
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                'Access-Control-Allow-Origin': '*'
             },
             body:JSON.stringify({'refresh':authToken?.refresh})
         })

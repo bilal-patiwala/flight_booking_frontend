@@ -33,7 +33,8 @@ const Home = () => {
     let response = await fetch(`http://127.0.0.1:8000/get-flight/?${url}`,{
         method:'GET',
         headers:{
-            "Content-Type":"application/json"
+            "Content-Type":"application/json",
+            'Access-Control-Allow-Origin': '*'
         }
     })
 
@@ -47,7 +48,8 @@ const Home = () => {
         method:'POST',
         headers:{
             'Content-Type':'application/json',
-            Authorization: `Bearer ${authToken.refresh}`
+            Authorization: `Bearer ${authToken.refresh}`,
+            'Access-Control-Allow-Origin': '*'
         },
         body:JSON.stringify({'flight_id':flight_id})
     })

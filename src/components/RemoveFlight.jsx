@@ -22,6 +22,7 @@ const RemoveFlight = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
+          'Access-Control-Allow-Origin': '*'
         },
       }
     );
@@ -34,7 +35,8 @@ const RemoveFlight = () => {
     let response = await fetch(`http://127.0.0.1:8000/delete-flight/${id}`, {
         method:"DELETE",
         headers:{
-            "Content-Type":"application/json"
+            "Content-Type":"application/json",
+            'Access-Control-Allow-Origin': '*'
         }
     })
     let data = await response.json()
