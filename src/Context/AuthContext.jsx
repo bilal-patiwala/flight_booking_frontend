@@ -52,7 +52,8 @@ export const AuthProvider = ({children}) => {
     let flight_admin_login = async (event) => {
         event.preventDefault()
         console.log(event.target.username.value);
-        let response = await fetch("http://127.0.0.1:8000/flight-admin-login/",{
+        // let response = await fetch("http://127.0.0.1:8000/flight-admin-login/",{
+        let response = await fetch("https://flight-booking-system-dun.vercel.app/flight-admin-login/",{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
@@ -73,7 +74,8 @@ export const AuthProvider = ({children}) => {
 
     const signupUser = async (event) => {
         event.preventDefault()
-        let register_response = await fetch('http://127.0.0.1:8000/flight-user-register/', {
+        // let register_response = await fetch('http://127.0.0.1:8000/flight-user-register/', {
+        let register_response = await fetch('https://flight-booking-system-dun.vercel.app/flight-user-register/', {
             method:"POST",
             headers: {
                 'X-CSRFToken':csrftoken,
