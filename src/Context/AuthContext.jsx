@@ -77,7 +77,7 @@ export const AuthProvider = ({children}) => {
     const signupUser = async (event) => {
         event.preventDefault()
         // let register_response = await fetch('http://127.0.0.1:8000/flight-user-register/', {
-        let register_response = await fetch('https://flight-booking-system-dun.vercel.app/flight-user-register/', {
+        let register_response = await fetch('https://flight-booking-system-bilal-patiwala.vercel.app/flight-user-register/', {
             method:"POST",
             mode: 'no-cors',
             headers: {
