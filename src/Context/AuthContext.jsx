@@ -79,6 +79,7 @@ export const AuthProvider = ({children}) => {
         // let register_response = await fetch('http://127.0.0.1:8000/flight-user-register/', {
         let register_response = await fetch('https://flight-booking-system-dun.vercel.app/flight-user-register/', {
             method:"POST",
+            mode: 'no-cors',
             headers: {
                 'X-CSRFToken':csrftoken,
                 'Content-Type':"application/json",
