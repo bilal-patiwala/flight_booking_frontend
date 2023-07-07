@@ -105,6 +105,7 @@ const AdminDashboard = () => {
 
       {bookings.length > 0 ?( 
       <div className="booking-details-list mt-5">
+        <div className="text-2xl mt-4">Booked Tickets</div>
         {bookings.map((booking) => (
           <div key={booking.id} className="booking-card">
             <p className="booking-info">
