@@ -75,16 +75,15 @@ export const AuthProvider = ({children}) => {
     const signupUser = async (event) => {
         event.preventDefault()
         // http://127.0.0.1:8000/flight-user-register/
-        let register_response = await fetch('https://flight-booking-system-dun.vercel.app/flight-user-register/', {
+        let register_response = await fetch('http://127.0.0.1:8000/flight-user-register/', {
             method:"POST",
             headers: {
                 'X-CSRFToken':csrftoken,
                 'Content-Type':"application/json",
-                'Access-Control-Allow-Origin': "https://flight-booking-frontend-eight.vercel.app"
+                
             },
             body: JSON.stringify({username:event.target.username.value, email:event.target.email.value, password:event.target.password.value})
         })
-        console.log(register_response);
         if(register_response.status !== 201){
             return register_response
         }

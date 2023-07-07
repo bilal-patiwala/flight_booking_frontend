@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import AuthContext from '../Context/AuthContext'
 import "../styles/MyBooking.css";
 import "../styles/userdashbord.css";
+import { useNavigate } from 'react-router-dom';
 
 
 const MyBookings = () => {
     let [bookings, setBookings] = useState([])
     const {authToken, logout, user} = useContext(AuthContext)
+    const navigate = useNavigate()
     useEffect(() => {
         getBookedFlights()
     },[])

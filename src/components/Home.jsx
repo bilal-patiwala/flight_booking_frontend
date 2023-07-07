@@ -52,8 +52,8 @@ const Home = () => {
         body:JSON.stringify({'flight_id':flight_id})
     })
     let data = await response.json()
-    console.log(data);
-
+    
+    navigate('/myBookings')
   }
 
 
