@@ -80,7 +80,7 @@ export const AuthProvider = ({children}) => {
             headers: {
                 'X-CSRFToken':csrftoken,
                 'Content-Type':"application/json",
-                'Access-Control-Allow-Origin': "*"
+                'Access-Control-Allow-Origin': "https://flight-booking-frontend-eight.vercel.app"
             },
             body: JSON.stringify({username:event.target.username.value, email:event.target.email.value, password:event.target.password.value})
         })
