@@ -1,6 +1,28 @@
 # Fly-High - a flight booking System Frontend
 
-Flight booking web application for booking Flights for user and adding flights by admin.
+Fly High is a web application that can be used for flight booking and management. This flight management system has two models User and admin. 
+
+## User
+* User sign in/login
+* Book Flights
+* See all bookings
+* Search flights based on destination, date, time, origin
+
+## Admin
+* Login
+* Add/delete Flights
+* Check all the flights and corresponding bookings.
+
+## Tech Stack 
+
+### Frontend
+* Reactjs (for data rendering and state management)
+* TailwindCSS (for design)
+
+### Backend
+* django, djangorestframework
+* simple jwt for user authentication,
+* postgrsql/sqlite3 as database
 
 ## Installation
 
@@ -20,19 +42,6 @@ Now you are ready to go.
 
 ## Screen Shots
 
-Welcome Page
-
-![image](https://github.com/bilal-patiwala/flight_booking_frontend/assets/95634055/ebae8265-bef1-4898-aa67-621f15886901)
-
-user-login and user-register
-
-![image](https://github.com/bilal-patiwala/flight_booking_frontend/assets/95634055/df63b7f2-9cea-4096-8575-ba9b2c24e45c)
-![image](https://github.com/bilal-patiwala/flight_booking_frontend/assets/95634055/c615e251-0f84-47d8-b6ea-30293c12b0df)
-
-admin-login
-
-![image](https://github.com/bilal-patiwala/flight_booking_frontend/assets/95634055/eb0245bc-2406-4bc0-9aae-0550d22859b7)
-
 user-dashboard
 
 ![image](https://github.com/bilal-patiwala/flight_booking_frontend/assets/95634055/b3f0422e-8d2b-47c3-93c3-ba63fb5d546a)
@@ -43,7 +52,7 @@ user-bookings
 
 admin-dashboard
 
-![image](https://github.com/bilal-patiwala/flight_booking_frontend/assets/95634055/b39bb9be-8133-4cf9-b4a5-5b8a853f3168)
+![image](https://github.com/bilal-patiwala/flight_booking_frontend/assets/95634055/64862ff6-0bb5-4631-b61d-e0913ea3e782)
 
 add-flight
 
