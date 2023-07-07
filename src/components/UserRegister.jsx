@@ -7,6 +7,7 @@ const UserRegister = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState('');
+    const [errormsg, setErrormsg] = useState("")
     const [confirmPassword, setConfirmPassword] = useState('');
     let navigate = useNavigate()
     let {signupUser,user} = useContext(AuthContext)
@@ -24,17 +25,16 @@ const UserRegister = () => {
         setConfirmPassword(event.target.value)
     }
 
-    const signupFormHandler = (event) => {
+    const signupFormHandler = async (event) => {
         if(username != '' && email!='' && password != '' && confirmPassword != ''){
             if(password === confirmPassword){
-                signupUser(event)
+                let response = await signupUser(event)
+                let data =  await response.json()
+                setErrormsg(data.error)
             }
             else{
-                alert("password not matched")
+                setErrormsg("password not matched")
             }
-        }
-        else{
-            alert("Enter credetials")
         }
     }
 
@@ -47,13 +47,14 @@ const UserRegister = () => {
                 <div className='flex-row bg-white p-10 w-96 rounded-md'>
                     <h3 className='text-center text-2xl mb-6'>Register</h3>
                     <form className='flex flex-col space-y-6 mb-6' onSubmit={signupFormHandler}>
-                        <input type='text' placeholder="Username" name='username' value={username} className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" onChange={usernameHandler} />
-                        <input type='Email' placeholder="Email" name="email" value={email} className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" onChange={emailHandler} />
-                        <input type='password' placeholder="Password" name='password' value={password} className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" onChange={passwordHandler} />
-                        <input type='password' placeholder="Confirm Password" name='confirmpassword' className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" value={confirmPassword} onChange={confirmPasswordHandler}/>
+                        <input type='text' placeholder="Username" name='username' value={username} className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" onChange={usernameHandler} required/>
+                        <input type='Email' placeholder="Email" name="email" value={email} className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" onChange={emailHandler} required />
+                        <input type='password' placeholder="Password" name='password' value={password} className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" onChange={passwordHandler} required minLength={6}/>
+                        <input type='password' placeholder="Confirm Password" name='confirmpassword' className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" value={confirmPassword} onChange={confirmPasswordHandler} required minLength={6}/>
                         <button type="submit" className={styles['signup-btn']}>Sign-Up</button>
+                        {errormsg != "" ? (<p className="text-[#ff0000]">{errormsg}</p>) : null}
                     </form>
-                    <a className="cursor-pointer" onClick={(event) => {navigate('/userRegister')}} target="_blank">have an account? <span className="text-[#FC4F00]">Login</span></a>
+                    <a className="cursor-pointer" onClick={(event) => {navigate('/userLogin')}} target="_blank">have an account? <span className="text-[#FC4F00]">Login</span></a>
                 </div>
             </div>`
         </div>

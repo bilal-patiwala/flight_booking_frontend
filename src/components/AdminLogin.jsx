@@ -6,6 +6,7 @@ import AuthContext from "../Context/AuthContext";
 const AdminLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState("");
+  const [errormsg, setErrormsg] = useState(0)
   let navigate = useNavigate()
   let {flight_admin_login, user} = useContext(AuthContext)
   
@@ -16,9 +17,12 @@ const AdminLogin = () => {
     setPassword(event.target.value)
   }
 
-  const loginFormSubmit = (event) => {
+  const loginFormSubmit = async (event) => {
     if (username != "" && password!=""){
-      flight_admin_login(event)
+      let response = await flight_admin_login(event)
+      if (response.status === 401){
+        setErrormsg(response.status)
+      }
     }
   }
 
@@ -31,15 +35,16 @@ const AdminLogin = () => {
                 <div className="flex-row bg-white p-10 rounded-md">
                     <h3 className="text-2xl text-center mb-6">Admin Login</h3>
                     <form className="flex flex-col space-y-6 mb-6" onSubmit={loginFormSubmit}>
-                        <input type='text' name="username" placeholder="Username" value={username} className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" onChange={usernameHandler} />
-                        <input type='Password'name="password" placeholder="Password" className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" value={password} onChange={passwordHandler}/>
+                        <input type='text' name="username" placeholder="Username" value={username} className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" onChange={usernameHandler} required/>
+                        <input type='Password'name="password" placeholder="Password" className="bg-[#DDE6ED] p-2 border-b focus:outline-none rounded" value={password} onChange={passwordHandler} required minLength={6}/>
                         <button type="submit" className={styles['login-btn']}>Login</button>
+                        {errormsg === 401 ? (<p className="text-[#ff0000]">Invalid Username or Password</p>) : null}
                     </form>
                     
                 </div>
             </div>
         </div>
-      
+        
     </div>
   );
 };

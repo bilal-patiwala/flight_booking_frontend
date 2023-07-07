@@ -10,6 +10,7 @@ const AdminDashboard = () => {
   let [bookings, setBookings] = useState([]);
   const { authToken, logout, user } = useContext(AuthContext);
   const navigate = useNavigate()
+  const [error, setError] = useState("")
   const handleSearch = async () => {
     let url = "";
     if (flightno !== "") {
@@ -27,13 +28,19 @@ const AdminDashboard = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          
         },
       }
     );
 
     let data = await response.json();
-    setBookings(data);
+    if(response.status != 200){
+        setError("No Flight Available")
+    }
+    else{
+        setBookings(data);
+    }
+    
+    console.log(data);
   };
   return (
     !user ? navigate('/welcomePage') :
@@ -95,6 +102,8 @@ const AdminDashboard = () => {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
+
+      {bookings.length > 0 ?( 
       <div className="booking-details-list mt-5">
         {bookings.map((booking) => (
           <div key={booking.id} className="booking-card">
@@ -127,7 +136,9 @@ const AdminDashboard = () => {
             </p>
           </div>
         ))}
-      </div>
+      </div>) : (<div className="text-2xl">{error}</div>)}
+
+      
     </div>
   );
 };

@@ -6,7 +6,7 @@ import "../styles/userdashbord.css";
 
 const MyBookings = () => {
     let [bookings, setBookings] = useState([])
-    const {authToken, logout} = useContext(AuthContext)
+    const {authToken, logout, user} = useContext(AuthContext)
     useEffect(() => {
         getBookedFlights()
     },[])
